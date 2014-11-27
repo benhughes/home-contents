@@ -1,9 +1,15 @@
 var browserifyConfig = {
-    dist: {
+    debug: {
         files: {
-            '<%= buildOutput %>/<%= releaseOutput %>/main.js': ['src/js/*.js', 'src/js/**/*.js']
+            '<%= buildOutput %>/<%= debugOutput %>/js/main.js': ['src/js/*.js', 'src/js/**/*.js']
+        }
+    },
+    release: {
+        files: {
+            '<%= buildOutput %>/<%= releaseOutput %>/js/main.js': ['src/js/*.js', 'src/js/**/*.js']
         }
     }
+
 };
 
 

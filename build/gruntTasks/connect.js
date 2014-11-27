@@ -1,5 +1,12 @@
 var connectConfig = {
-    server: {
+    debug: {
+        options: {
+            port: "8080",
+            base: '<%= buildOutput %>/<%= debugOutput %>',
+            hostname: ''
+        }
+    },
+    release: {
         options: {
             port: "8080",
             base: 'src',

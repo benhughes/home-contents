@@ -3,7 +3,8 @@ module.exports = function (grunt) {
 
     grunt.initConfig({
         buildOutput: "out",
-        releaseOutput: "release"
+        releaseOutput: "release",
+        debugOutput: "debug"
     });
 
     grunt.registerTask('compliment', 'Outputs build information', function () {
@@ -11,6 +12,8 @@ module.exports = function (grunt) {
     });
 
     grunt.loadTasks('build/gruntTasks');
+
+    grunt.registerTask('localDev', ['clean:debug', 'copy:debug', 'browserify:debug','connect:debug', 'watch:debug']);
 
     grunt.registerTask('test', ['compliment']);
     grunt.registerTask('test:hint', []);
