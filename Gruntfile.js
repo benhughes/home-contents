@@ -14,7 +14,10 @@ module.exports = function (grunt) {
 
     grunt.loadTasks('build/gruntTasks');
 
-    grunt.registerTask('localDev', ['clean:debug', 'copy:debug', 'sass:debug', 'browserify:debug','connect:debug', 'watch']);
+    grunt.registerTask('build', ['compliment', 'test']);
+    grunt.registerTask('build:debug', ['clean:debug', 'copy:debug', 'sass:debug', 'browserify:debug']);
+
+    grunt.registerTask('localDev', ['build:debug', 'connect:debug', 'watch']);
 
     grunt.registerTask('test', ['compliment']);
     grunt.registerTask('test:hint', []);
@@ -22,6 +25,5 @@ module.exports = function (grunt) {
     grunt.registerTask('test:integration', []);
     grunt.registerTask('test:coverage', []);
     grunt.registerTask('test:functional', []);
-    grunt.registerTask('build', ['compliment', 'test']);
     grunt.registerTask('default', ['test']);
 };
