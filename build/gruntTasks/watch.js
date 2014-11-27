@@ -3,7 +3,7 @@ module.exports = function (grunt) {
 
     var watchConfig = {
         debug: {
-            files: ['src/js/*.js', 'src/js/**/*.js'],
+            files: ['<%= localFileInput %>/js/*.js', '<%= localFileInput %>/js/**/*.js'],
             tasks: ['browserify:debug'],
             options: {
                 spawn: false,

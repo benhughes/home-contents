@@ -3,7 +3,7 @@ var copyConfig = {
         files: [
             {
                 expand: true,
-                cwd: 'src',
+                cwd: '<%= localFileInput %>',
                 src: [
                     'index.html'
                 ],

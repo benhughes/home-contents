@@ -9,7 +9,7 @@ var connectConfig = {
     release: {
         options: {
             port: "8080",
-            base: 'src',
+            base: '<%= localFileInput %>',
             keepalive: true,
             hostname: ''
         }

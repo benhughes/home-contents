@@ -2,6 +2,7 @@ module.exports = function (grunt) {
     'use strict';
 
     grunt.initConfig({
+        localFileInput: "src",
         buildOutput: "out",
         releaseOutput: "release",
         debugOutput: "debug"

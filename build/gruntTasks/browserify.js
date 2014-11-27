@@ -1,12 +1,12 @@
 var browserifyConfig = {
     debug: {
         files: {
-            '<%= buildOutput %>/<%= debugOutput %>/js/main.js': ['src/js/*.js', 'src/js/**/*.js']
+            '<%= buildOutput %>/<%= debugOutput %>/js/main.js': ['<%= localFileInput %>/js/*.js', '<%= localFileInput %>/js/**/*.js']
         }
     },
     release: {
         files: {
-            '<%= buildOutput %>/<%= releaseOutput %>/js/main.js': ['src/js/*.js', 'src/js/**/*.js']
+            '<%= buildOutput %>/<%= releaseOutput %>/js/main.js': ['<%= localFileInput %>/js/*.js', '<%= localFileInput %>/js/**/*.js']
         }
     }
 
