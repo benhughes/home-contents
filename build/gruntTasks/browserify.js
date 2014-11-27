@@ -1,7 +1,16 @@
 var browserifyConfig = {
+    options: {
+        debug: true,
+        transform: ['reactify'],
+        extensions: ['.jsx'],
+    },
     debug: {
         files: {
-            '<%= buildOutput %>/<%= debugOutput %>/js/main.js': ['<%= localFileInput %>/js/*.js', '<%= localFileInput %>/js/**/*.js']
+            '<%= buildOutput %>/<%= debugOutput %>/js/main.js': [
+                '<%= localFileInput %>/js/*.js',
+                '<%= localFileInput %>/js/**/*.js',
+                '<%= localFileInput %>/js/views/*.jsx'
+            ]
         }
     },
     release: {
