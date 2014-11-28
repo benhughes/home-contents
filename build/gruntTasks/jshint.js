@@ -2,10 +2,23 @@ module.exports = function (grunt) {
     'use strict';
 
     var jshintConfig = {
-        options: {
-            jshintrc: true
+        js: {
+            options: {
+                jshintrc: '.jshintrc'
+            },
+            files: {
+                src: ['src/js/**/*.js']
+            }
         },
-        files: ['src/js/**/*.js']
+        build: {
+            options: {
+                jshintrc: 'build/gruntTasks/.jshintrc'
+            },
+            files: {
+                src: ['build/gruntTasks/*.js']
+            }
+
+        }
     };
 
     grunt.config('jshint', jshintConfig);

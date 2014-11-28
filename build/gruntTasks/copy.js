@@ -1,5 +1,7 @@
+"use strict";
+
 var copyConfig = {
-    debug: {
+    main: {
         files: [
             {
                 expand: true,
@@ -7,7 +9,7 @@ var copyConfig = {
                 src: [
                     'index.html'
                 ],
-                dest: '<%= buildOutput %>/<%= debugOutput %>'
+                dest: '<%= buildOutput %>/<%= compiledOutput %>'
             }
         ]
     }

@@ -1,6 +1,8 @@
+"use strict";
+
 var cleanConfig = {
     out: ["<%= buildOutput %>"],
-    debug: '<%= buildOutput %>/<%= debugOutput %>'
+    compiledOutput: '<%= buildOutput %>/<%= compiledOutput %>'
 };
 
 module.exports = function (grunt) {

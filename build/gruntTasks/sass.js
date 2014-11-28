@@ -2,9 +2,9 @@ module.exports = function (grunt) {
     'use strict';
 
     var sassConfig = {
-        debug: {
+        main: {
             files: {
-                '<%= buildOutput %>/<%= debugOutput %>/css/main.css': '<%= localFileInput %>/css/main.scss'
+                '<%= buildOutput %>/<%= compiledOutput %>/css/main.css': '<%= localFileInput %>/css/main.scss'
             }
         }
     };

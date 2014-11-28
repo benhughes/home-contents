@@ -8,7 +8,7 @@ module.exports = function (grunt) {
                 '<%= localFileInput %>/js/**/*.js',
                 '<%= localFileInput %>/js/**/*.jsx'
             ],
-            tasks: ['browserify:debug'],
+            tasks: ['build:js'],
             options: {
                 spawn: false,
                 livereload: true
@@ -16,7 +16,7 @@ module.exports = function (grunt) {
         },
         sass: {
             files: ['<%= localFileInput %>/css/*.scss'],
-            tasks: ['sass:debug'],
+            tasks: ['sass:main'],
             options: {
                 spawn: false,
                 livereload: true

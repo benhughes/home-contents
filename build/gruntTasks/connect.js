@@ -1,16 +1,10 @@
+"use strict";
+
 var connectConfig = {
-    debug: {
+    main: {
         options: {
             port: "8080",
-            base: '<%= buildOutput %>/<%= debugOutput %>',
-            hostname: ''
-        }
-    },
-    release: {
-        options: {
-            port: "8080",
-            base: '<%= localFileInput %>',
-            keepalive: true,
+            base: '<%= buildOutput %>/<%= compiledOutput %>',
             hostname: ''
         }
     }

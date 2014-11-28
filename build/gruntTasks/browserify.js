@@ -1,21 +1,18 @@
+"use strict";
+
 var browserifyConfig = {
     options: {
         debug: true,
         transform: ['reactify'],
-        extensions: ['.jsx'],
+        extensions: ['.jsx']
     },
-    debug: {
+    main: {
         files: {
-            '<%= buildOutput %>/<%= debugOutput %>/js/main.js': [
+            '<%= buildOutput %>/<%= compiledOutput %>/js/main.js': [
                 '<%= localFileInput %>/js/*.js',
                 '<%= localFileInput %>/js/**/*.js',
                 '<%= localFileInput %>/js/views/*.jsx'
             ]
-        }
-    },
-    release: {
-        files: {
-            '<%= buildOutput %>/<%= releaseOutput %>/js/main.js': ['<%= localFileInput %>/js/*.js', '<%= localFileInput %>/js/**/*.js']
         }
     }
 

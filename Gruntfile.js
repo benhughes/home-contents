@@ -1,11 +1,12 @@
 module.exports = function (grunt) {
     'use strict';
 
+    var release = false;
+
     grunt.initConfig({
         localFileInput: "src",
         buildOutput: "out",
-        releaseOutput: "release",
-        debugOutput: "debug"
+        compiledOutput: release ? "release" : "debug"
     });
 
     grunt.registerTask('compliment', 'Outputs build information', function () {
@@ -14,10 +15,11 @@ module.exports = function (grunt) {
 
     grunt.loadTasks('build/gruntTasks');
 
-    grunt.registerTask('build', ['compliment', 'test']);
-    grunt.registerTask('build:debug', ['clean:debug', 'copy:debug', 'sass:debug', 'browserify:debug']);
+    grunt.registerTask('build', ['clean:compiledOutput', 'copy:main', 'sass:main', 'build:js']);
 
-    grunt.registerTask('localDev', ['build:debug', 'connect:debug', 'watch']);
+    grunt.registerTask('build:js', ['browserify:main']);
+
+    grunt.registerTask('localDev', ['build', 'connect:main', 'watch']);
 
     grunt.registerTask('test', ['compliment']);
     grunt.registerTask('test:hint', ['jshint']);
