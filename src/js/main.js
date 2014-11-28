@@ -1,4 +1,4 @@
-var test = require('./test.js'),
+var testLib = require('./test.js'),
     exampleView = require('./views/example.jsx');
 
 var React = require('react');
@@ -11,4 +11,4 @@ React.render(
 );
 
 
-test();
+testLib();

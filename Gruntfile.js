@@ -20,7 +20,7 @@ module.exports = function (grunt) {
     grunt.registerTask('localDev', ['build:debug', 'connect:debug', 'watch']);
 
     grunt.registerTask('test', ['compliment']);
-    grunt.registerTask('test:hint', []);
+    grunt.registerTask('test:hint', ['jshint']);
     grunt.registerTask('test:unit', []);
     grunt.registerTask('test:integration', []);
     grunt.registerTask('test:coverage', []);
