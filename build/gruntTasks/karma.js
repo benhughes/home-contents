@@ -4,19 +4,20 @@ var karmaConfig = {
     options: {
         basePath: '',
         frameworks: ['jasmine', 'browserify'],
-        reporters: ['dots'],
+        reporters: ['dots', 'coverage'],
         preprocessors: {
-            'tests/unit/*.spec.js': [ 'browserify', ]
+            'tests/unit/*.spec.js': [ 'browserify'],
+            'src/**/*.js': ['coverage']
         },
         coverageReporter: {
             type: 'html',
-            dir: 'out/test/unit/'
+            dir: 'out/test-results/unit/'
         },
         junitReporter: {
             outputFile: 'out/test/test-results-unit.xml'
         },
         browserify: {
-            transform: [ 'reactify' ],
+            transform: ['browserify-istanbul','reactify' ],
             extensions: ['.jsx']
         },
         port: 9876,
@@ -28,8 +29,8 @@ var karmaConfig = {
     },
     unit: {
         options: {
-            files: ['tests/unit/*.spec.js'],
-            reporters: ['dots']
+            files: ['tests/unit/*.spec.js']
+
         }
     }
 };
