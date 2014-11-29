@@ -1,14 +1,15 @@
 "use strict";
 
 var React = require('react'),
-    ListItem = require('./listItem.jsx'),
+    ListItem = require('./listItem/listItem.jsx'),
     itemsData = require('../data/item.data');
 
 module.exports = React.createClass({
     defaultItem: {
         name: "edit me",
-        description: "Add a description"
-
+        description: "Add a description",
+        weight: 0,
+        fragile: false
     },
     onAddItemClick: function () {
         var itemData = this.defaultItem;
@@ -25,7 +26,7 @@ module.exports = React.createClass({
             rows.push(<ListItem key={item} id={item} item={items[item]}/>);
         }
         return (
-            <li className="roomlist">
+            <li className={["roomList", "roomList-" + this.props.id].join(' ')}>
                 <h2>{this.props.room.name}</h2>
                 <ul>
                     {rows}

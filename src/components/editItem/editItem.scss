@@ -1,0 +1,22 @@
+.protection {
+  background-color: rgba(0,0,0,0.6);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  .editDialogue {
+    width: 70%;
+    height: 50%;
+    top: 25%;
+    left: 15%;
+    position: absolute;
+    background-color: $white;
+    padding: 10%;
+    box-sizing: border-box;
+    border-radius: 2px;
+    h1 {
+      font-size: 2em;
+    }
+  }
+}

@@ -2,3 +2,17 @@
 
 
 @import "reset";
+@import "positions";
+@import "colours";
+
+body {
+  font-family: "Helvetic Neue", Helvetica, Arial;
+  color: $black;
+}
+
+h1, h2, h3, h4, h5, p {
+
+}
+
+@import "../components/listItem/listItem";
+@import "../components/editItem/editItem";

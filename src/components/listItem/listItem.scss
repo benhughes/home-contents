@@ -1,0 +1,58 @@
+
+
+li.listItem {
+  width: 100%;
+  padding: 1vh $gutter;
+  background-color: $white;
+  position: relative;
+  box-sizing: border-box;
+  cursor: text;
+  .edit {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 4px;
+    color: $white;
+    background-color: $darkGrey;
+    font-size: 0.7em;
+    display: none;
+  }
+  h3, input.name {
+    font-size: 1.7em;
+    color: $black;
+    border: none;
+    background-color: transparent;
+    font-family: "Helvetic Neue", Helvetica, Arial;
+    display: block;
+    margin: 0 0 5px;
+  }
+  input.name:focus {
+    outline: none;
+  }
+  span.description {
+    font-size: 0.9em;
+    color: $darkGrey;
+
+  }
+  span.fragileIndicator {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 0.7em;
+    padding: 4px;
+    color: $white;
+    background-color: $darkGrey;
+  }
+
+  span.weight {
+
+
+  }
+
+
+}
+li.listItem:hover {
+  .edit{
+    display: block;
+  }
+}

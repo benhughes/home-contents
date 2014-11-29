@@ -2,12 +2,12 @@
 
 var React = require('react'),
     RoomList = require('./../components/roomList.jsx'),
-    itemsData = require('./../data/rooms.data.js');
+    roomData = require('./../data/rooms.data.js');
 
 module.exports = React.createClass({
     render: function() {
         var rooms = [],
-            roomLists = itemsData.getData();
+            roomLists = roomData.getData();
 
         console.log("app", roomLists)
         for (var room in roomLists) {

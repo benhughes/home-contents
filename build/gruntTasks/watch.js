@@ -14,7 +14,7 @@ module.exports = function (grunt) {
             }
         },
         sass: {
-            files: ['<%= localFileInput %>/css/*.scss'],
+            files: ['<%= localFileInput %>/**/*.scss'],
             tasks: ['sass:main'],
             options: {
                 spawn: false,
