@@ -4,9 +4,8 @@ module.exports = function (grunt) {
     var watchConfig = {
         browserify: {
             files: [
-                '<%= localFileInput %>/js/*.js',
-                '<%= localFileInput %>/js/**/*.js',
-                '<%= localFileInput %>/js/**/*.jsx'
+                '<%= localFileInput %>/**/*.js',
+                '<%= localFileInput %>/**/*.jsx'
             ],
             tasks: ['build:js'],
             options: {

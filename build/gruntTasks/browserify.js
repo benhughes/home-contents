@@ -8,10 +8,10 @@ var browserifyConfig = {
     },
     main: {
         files: {
-            '<%= buildOutput %>/<%= compiledOutput %>/js/main.js': [
+            '<%= buildOutput %>/<%= compiledOutput %>/main.js': [
                 '<%= localFileInput %>/js/*.js',
-                '<%= localFileInput %>/js/**/*.js',
-                '<%= localFileInput %>/js/views/*.jsx'
+                '<%= localFileInput %>/**/*.js',
+                '<%= localFileInput %>/**/*.jsx'
             ]
         }
     }

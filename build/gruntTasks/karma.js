@@ -6,7 +6,7 @@ var karmaConfig = {
         frameworks: ['jasmine', 'browserify'],
         reporters: ['dots', 'coverage'],
         preprocessors: {
-            'tests/unit/*.spec.js': [ 'browserify'],
+            'tests/unit/**/*.spec.js': [ 'browserify'],
             'src/**/*.js': ['coverage']
         },
         coverageReporter: {
@@ -17,7 +17,7 @@ var karmaConfig = {
             outputFile: 'out/test/test-results-unit.xml'
         },
         browserify: {
-            transform: ['browserify-istanbul','reactify' ],
+            transform: ['reactify','browserify-istanbul' ],
             extensions: ['.jsx']
         },
         port: 9876,
@@ -29,7 +29,7 @@ var karmaConfig = {
     },
     unit: {
         options: {
-            files: ['tests/unit/*.spec.js']
+            files: ['tests/unit/**/*.spec.js']
 
         }
     }

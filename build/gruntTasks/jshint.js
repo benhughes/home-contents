@@ -7,7 +7,7 @@ module.exports = function (grunt) {
                 jshintrc: '.jshintrc'
             },
             files: {
-                src: ['src/js/**/*.js']
+                src: ['src/**/*.js']
             }
         },
         build: {
