@@ -23,7 +23,7 @@ module.exports = function (grunt) {
 
     grunt.registerTask('test', ['compliment', 'test:hint', 'test:unit']);
     grunt.registerTask('test:hint', ['jshint']);
-    grunt.registerTask('test:unit', ['karma:unit']);
+    grunt.registerTask('test:unit', ['clean:testResults', 'karma:unit']);
     grunt.registerTask('test:integration', []);
     grunt.registerTask('test:coverage', []);
     grunt.registerTask('test:functional', []);

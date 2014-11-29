@@ -1,11 +1,9 @@
 "use strict";
 
-var React = require('react'),
-    itemsData = require('../data/item.data');
+var React = require('react');
 
 module.exports = React.createClass({
     render: function() {
-        console.log(this.props);
         return (
             <li>
                 <h3>{this.props.item.name}</h3>

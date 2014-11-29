@@ -7,6 +7,7 @@ var karmaConfig = {
         reporters: ['dots', 'coverage'],
         preprocessors: {
             'tests/unit/**/*.spec.js': [ 'browserify'],
+            'tests/unit/**/*.spec.jsx': [ 'browserify'],
             'src/**/*.js': ['coverage']
         },
         coverageReporter: {
@@ -29,8 +30,11 @@ var karmaConfig = {
     },
     unit: {
         options: {
-            files: ['tests/unit/**/*.spec.js']
-
+            files: [
+                'tests/unit/helpers/bind.polyfill.js',
+                'tests/unit/**/*.spec.js',
+                'tests/unit/**/*.spec.jsx'
+            ]
         }
     }
 };
