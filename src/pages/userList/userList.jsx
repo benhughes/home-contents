@@ -3,7 +3,9 @@
 var React = require('react'),
     lang = require('./lang'),
     RoomList = require('./../../components/roomList/roomList.jsx'),
-    roomData = require('./../../data/rooms.data.js');
+    roomData = require('./../../data/rooms.data.js'),
+    itemsData = require('../../data/item.data');
+
 
 module.exports = React.createClass({
     render: function() {
@@ -12,8 +14,7 @@ module.exports = React.createClass({
             roomLists = roomData.getData();
 
         for (var room in roomLists) {
-            console.log(roomLists[room]);
-            rooms.push(<RoomList key={room} id={room} room={roomLists[room]}/>);
+            rooms.push(<RoomList key={room} id={room} room={roomLists[room]} items={itemsData.filterByRoom(room)}/>);
         }
         return (
             <div className="page userList">

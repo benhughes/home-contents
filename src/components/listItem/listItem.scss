@@ -64,7 +64,8 @@ li.listItem {
 
 
 }
-li.listItem:hover {
+
+li.listItem.editable:hover {
   .bottomInfo {
     .edit {
       display: block;

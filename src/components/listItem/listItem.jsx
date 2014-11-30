@@ -14,7 +14,7 @@ module.exports = React.createClass({
         var language = lang("en");
 
         return (
-            <li className={["listItem", "listItem-" + this.props.id].join(' ')}>
+            <li className={["listItem", "listItem-" + this.props.id, this.props.editable ? "editable" : ""].join(' ')}>
 
                 <h3>{this.props.item.name}</h3>
                 <p className="description">{this.props.item.description}</p>

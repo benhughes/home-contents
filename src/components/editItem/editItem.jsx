@@ -56,7 +56,8 @@ var EditItem = React.createClass({
         this.setState({itemDescription: event.target.value});
     },
     handleWeightChange: function (event) {
-        this.setState({itemWeight: event.target.value});
+        var number = parseInt(event.target.value) || 0;
+        this.setState({itemWeight: number});
     },
     handleFragileChange: function (event) {
         this.setState({itemFragile: event.target.value === "true"});
@@ -64,16 +65,20 @@ var EditItem = React.createClass({
     handleRoomChange: function (event) {
         this.setState({itemRoom: event.target.value});
     },
-    onClose:function () {
+    onClose:function (event) {
+        event.preventDefault();
         this.removeComponent();
     },
-    onSaveAndClose: function () {
+    onSaveAndClose: function (event) {
+        event.preventDefault();
         this.saveState(this.removeComponent.bind(this));
     },
-    onSaveAndNew: function () {
+    onSaveAndNew: function (event) {
+        event.preventDefault();
         this.saveState(this.openNew.bind(this));
     },
-    onDelete: function () {
+    onDelete: function (event) {
+        event.preventDefault();
         itemDataSelector.child(this.props.id).remove(this.removeComponent.bind(this));
     },
     handleKeyDown: function () {
