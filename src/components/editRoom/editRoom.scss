@@ -1,0 +1,85 @@
+.protection {
+  background-color: rgba(0,0,0,0.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: $layer3Index;
+
+  .editDialogue {
+    width: 70%;
+    height: 60%;
+    top: 20%;
+    left: 15%;
+    position: fixed;
+    background-color: $white;
+    padding: 5%;
+    box-sizing: border-box;
+    border-radius: 2px;
+    z-index: $layer3Index;
+    box-shadow: $layer3Shadow;
+
+    h1 {
+      font-size: 2em;
+      color: $darkColour;
+    }
+    li {
+      margin-bottom: 10px;
+    }
+    label {
+      font-size: 1.2em;
+      color: $darkColour;
+    }
+    input {
+      font-size: 1.2em;
+    }
+    .textInput, .optionInput {
+      label {
+        padding-right: 5%;
+        box-sizing: border-box;
+        width: 20%;
+        display: inline-block;
+      }
+      input, select {
+        width: 75%;
+      }
+    }
+    .textareaInput {
+      label {
+        display: block;
+
+      }
+      textarea {
+        width: 100%;
+        font-size: 1.2em;
+        height: 3em;
+      }
+    }
+    .buttonHolder {
+      position: absolute;
+      bottom: 5%;
+      .button {
+        display: inline-block;
+        padding: 5px 15px;
+        background-color: $darkColour;
+        color: $white;
+        text-decoration: none;
+        margin-right: 10px;
+      }
+      .button.saveAndClose {
+        background-color: $midColour;
+      }
+      .button.saveAndNew {
+        background-color: $lightColour;
+      }
+      .button.close {
+        background-color: transparent;
+        color: $midColour;
+        padding-bottom: 0;
+      }
+    }
+
+
+  }
+}

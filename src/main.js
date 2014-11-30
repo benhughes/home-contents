@@ -1,16 +1,13 @@
 "use strict";
 
-var exampleView = require('./components/roomList/roomList.jsx'),
-//    appPage = require('./pages/userList/userList.jsx'),
-    appPage = require('./pages/moverList/moverList.jsx'),
-    React = require('react'),
-    appData = require('./data/app.data.js');
+var router = require('./router'),
+    React = require('react');
 
 var renderPage = function () {
+    var pageToLoad = router.getPageToLoad();
     React.render(
-        React.createElement(appPage, null),
+        React.createElement(pageToLoad, null),
         document.getElementById('main')
     );
 };
-
-appData.on("value", renderPage);
+renderPage();

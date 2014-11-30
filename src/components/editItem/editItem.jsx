@@ -2,7 +2,7 @@
 
 var React = require('react'),
     roomData = require('../../data/rooms.data'),
-    itemDataSelector = require('../../data/item.data').getSelector(),
+    itemData = require('../../data/item.data'),
     lang = require('./lang');
 
 var ENTER_KEY = 13;
@@ -25,7 +25,7 @@ var EditItem = React.createClass({
     },
 
     saveState: function (callBack) {
-        itemDataSelector.child(this.props.id).set({
+        itemData.getSelector().child(this.props.id).set({
             name: this.state.itemName,
             description: this.state.itemDescription,
             fragile: this.state.itemFragile,
@@ -42,7 +42,7 @@ var EditItem = React.createClass({
             weight: 0,
             room: this.state.itemRoom
         };
-        var newItem = itemDataSelector.push(newDefault, function () {
+        var newItem = itemData.getSelector().push(newDefault, function () {
             this.removeComponent();
             React.render(<EditItem item={newDefault} id={newItem.name()} />, document.getElementById('popup'));
 
@@ -70,7 +70,9 @@ var EditItem = React.createClass({
         this.removeComponent();
     },
     onSaveAndClose: function (event) {
-        event.preventDefault();
+        if (event) {
+            event.preventDefault();
+        }
         this.saveState(this.removeComponent.bind(this));
     },
     onSaveAndNew: function (event) {
@@ -79,7 +81,7 @@ var EditItem = React.createClass({
     },
     onDelete: function (event) {
         event.preventDefault();
-        itemDataSelector.child(this.props.id).remove(this.removeComponent.bind(this));
+        itemData.getSelector().child(this.props.id).remove(this.removeComponent.bind(this));
     },
     handleKeyDown: function () {
         if (event.which === ENTER_KEY) {
@@ -104,7 +106,7 @@ var EditItem = React.createClass({
                     <ul>
                         <li className="textInput">
                             <label htmlFor="name">{language.nameLabel}:</label>
-                            <input data-itemStateId="itemName" id="itemNameEdit" placeholder={language.nameLabel} value={this.state.itemName} onSubmit={this.onSaveAndClose} onChange={this.handleNameChange} onKeyDown={this.handleKeyDown}/>
+                            <input id="itemNameEdit" placeholder={language.nameLabel} value={this.state.itemName} onSubmit={this.onSaveAndClose} onChange={this.handleNameChange} onKeyDown={this.handleKeyDown}/>
                         </li>
                         <li className="textareaInput">
                             <label htmlFor="itemDescriptionEdit">{language.descriptionLabel}:</label>

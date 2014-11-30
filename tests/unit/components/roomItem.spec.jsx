@@ -36,39 +36,11 @@ describe('roomItem.jsx', function () {
         console.log(stubs['../../data/item.data'].filterByRoom.andReturn);
 
         var listItem = (
-            <RoomList key={0} id="idstring" room={testData} />
+            <RoomList key={0} id="idstring" room={testData} items={[]}/>
         );
         instance = TestUtils.renderIntoDocument(listItem);
 
         var h2 = TestUtils.findRenderedDOMComponentWithTag(instance, 'h2');
         expect(h2.getDOMNode().textContent).toEqual(testData.name);
     });
-    //describe('clicking add button', function () {
-    //    it('should launch edit view passing the props as the new props', function () {
-    //        var testData = {
-    //            name: "Test Room"
-    //        };
-    //
-    //        instance = TestUtils.renderIntoDocument(
-    //            <RoomList key={0} id="testID" room={testData} />
-    //        );
-    //        //var container = document.createElement("div");
-    //        //container.id = "popup";
-    //        //document.body.appendChild(container);
-    //
-    //
-    //        spyOn(React, 'render');
-    //
-    //        React.addons.TestUtils.Simulate.click(instance.refs.addItemButton.getDOMNode());
-    //        //best way I can determine that the right things are being called
-    //        //better knowledge of React would help here :)
-    //        expect(stubs['../../data/item.data'].getSelector).toHaveBeenCalled();
-    //        expect(react['../../data/item.data'].getSelector).toHaveBeenCalled();
-    //        //expect(React.render.calls.argsFor(0)[0]._store.props.item).toBe(testData);
-    //        //expect(React.render.calls.argsFor(0)[1]).toBe(container);
-    //
-    //    })
-    //})
-
-
 });

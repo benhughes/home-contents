@@ -2,8 +2,8 @@
 
 var lang = {
     "en": {
-        "pageTitle": "Moving List",
-        "addRoom": "Add A Room"
+        "nameLabel": "Name",
+        "title": "Edit/Add Room"
     },
     "fr": {
 

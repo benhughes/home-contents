@@ -1,18 +1,22 @@
 "use strict";
 
 var appData = require('./app.data'),
-    fbSelector = appData.child('items'),
+    fbSelector,
     convertFBObjectToArray = require('../utils/convertFBObjectToArray'),
     data = {};
 
 
-fbSelector.on("value", function(snapshot) {
-    //firebase doesn't really like arrays so we store everything as an object
-    //then convert it in the front end so we can use array functions like filter, sort etc.
-    data = convertFBObjectToArray(snapshot.val());
-});
+
 
 var itemData = {
+    initialize: function () {
+        fbSelector = appData.getSelector().child('items');
+        fbSelector.on("value", function(snapshot) {
+            //firebase doesn't really like arrays so we store everything as an object
+            //then convert it in the front end so we can use array functions like filter, sort etc.
+            data = convertFBObjectToArray(snapshot.val());
+        });
+    },
     getSelector: function () {
         return fbSelector;
     },
@@ -38,10 +42,10 @@ var itemData = {
             return bWeight - aWeight;
         });
 
-        if (sortedData[0].weight) {
+        if (sortedData[0] && sortedData[0].weight) {
             returnedData.push(sortedData[0]);
         }
-        if (sortedData[1].weight) {
+        if (sortedData[1] && sortedData[1].weight) {
             returnedData.push(sortedData[1]);
         }
 

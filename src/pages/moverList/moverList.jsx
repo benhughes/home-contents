@@ -2,11 +2,23 @@
 
 var React = require('react'),
     lang = require('./lang'),
+    appData = require('../../data/app.data.js'),
     RoomList = require('./../../components/roomList/roomList.jsx'),
     roomData = require('./../../data/rooms.data.js'),
     itemsData = require('../../data/item.data');
 
 module.exports = React.createClass({
+    getInitialState: function () {
+        appData.initialize().on('value', this.dataChanged);
+        return {loading: true};
+    },
+    dataChanged:function () {
+        this.setState({"loading": false});
+        roomData.initialize();
+        itemsData.initialize();
+        console.log('here');
+        this.forceUpdate();
+    },
     render: function() {
         console.log('move list')
         var heavyItemsByRoom,
