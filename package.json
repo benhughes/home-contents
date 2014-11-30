@@ -34,11 +34,14 @@
     "karma-browserify": "~1.0.0",
     "karma-phantomjs-launcher": "~0.1.4",
     "karma-coverage": "~0.2.6",
-    "browserify-istanbul": "~0.1.2"
+    "browserify-istanbul": "~0.1.2",
+    "rewireify": "0.0.13"
   },
   "dependencies": {
     "npm": "~2.1.9",
     "react": "~0.12.1",
-    "client-firebase": "~1.0.1"
+    "client-firebase": "~1.0.1",
+    "browserify": "~6.3.3",
+    "proxyquireify": "~1.1.0"
   }
 }
