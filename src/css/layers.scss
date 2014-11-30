@@ -1,0 +1,11 @@
+$shadowblur: 8px;
+$colour: rgba(0,0,0,0.6);
+//layer 1
+$layer1Shadow: 0px 2px $shadowblur $colour;
+$layer1Index: 2;
+
+$layer2Shadow: 0px 4px $shadowblur $colour;
+$layer2Index: 4;
+
+$layer3Shadow: 0px 6px $shadowblur $colour;
+$layer3Index: 6;

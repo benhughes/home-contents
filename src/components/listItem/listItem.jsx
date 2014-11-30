@@ -6,7 +6,8 @@ var React = require('react'),
 
 
 module.exports = React.createClass({
-    onEditClick: function () {
+    onEditClick: function (event) {
+        event.preventDefault();
         console.log('editClick');
         React.render(<EditItem item={this.props.item} id={this.props.id} />, document.getElementById('popup'));
     },

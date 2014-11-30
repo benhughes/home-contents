@@ -29,6 +29,7 @@ li.listItem {
     width: 100%;
     height: 30px;
     font-size: 0.7em;
+    z-index: $layer1Index;
     span.weight, span.fragileIndicator, a.edit {
       display: none;
       float: left;
@@ -39,6 +40,7 @@ li.listItem {
       text-align: center;
       color: $white;
       background-color: $darkGrey;
+      box-shadow: $layer1Shadow;
     }
     span.fragileIndicator.fragileShow, span.weight.weightShow {
       display: block;

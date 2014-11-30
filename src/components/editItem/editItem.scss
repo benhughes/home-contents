@@ -1,20 +1,25 @@
 .protection {
-  background-color: rgba(0,0,0,0.6);
-  position: absolute;
+  background-color: rgba(0,0,0,0.3);
+  position: fixed;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
+  z-index: $layer3Index;
+
   .editDialogue {
     width: 70%;
     height: 50%;
     top: 25%;
     left: 15%;
-    position: absolute;
+    position: fixed;
     background-color: $white;
     padding: 5%;
     box-sizing: border-box;
     border-radius: 2px;
+    z-index: $layer3Index;
+    box-shadow: $layer3Shadow;
+
     h1 {
       font-size: 2em;
     }

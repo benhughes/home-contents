@@ -4,6 +4,13 @@
 @import "reset";
 @import "positions";
 @import "colours";
+@import "layers";
+
+//@media
+//only screen and (-webkit-min-device-pixel-ratio : 2),
+//only screen and (min-device-pixel-ratio : 2) {
+//  body { font-size: 200%; }
+//}
 
 body {
   font-family: "Helvetic Neue", Helvetica, Arial;
