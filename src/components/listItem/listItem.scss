@@ -71,3 +71,8 @@ li.listItem:hover {
     }
   }
 }
+
+ul > li.listItem:last-child {
+  border-bottom: none;
+  background-color: red;
+}

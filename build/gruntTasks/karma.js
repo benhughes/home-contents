@@ -1,5 +1,7 @@
 "use strict";
 
+var istanbul = require('browserify-istanbul');
+
 var karmaConfig = {
     options: {
         basePath: '',
@@ -7,18 +9,14 @@ var karmaConfig = {
         reporters: ['dots', 'coverage'],
         preprocessors: {
             'tests/unit/**/*.spec.js': [ 'browserify'],
-            'tests/unit/**/*.spec.jsx': [ 'browserify'],
-            'src/**/*.js': ['coverage']
+            'tests/unit/**/*.spec.jsx': [ 'browserify']
         },
         coverageReporter: {
             type: 'html',
             dir: 'out/test-results/unit/'
         },
-        junitReporter: {
-            outputFile: 'out/test/test-results-unit.xml'
-        },
         browserify: {
-            transform: ['reactify','browserify-istanbul' ],
+            transform: ['reactify'],
             extensions: ['.jsx']
         },
         port: 9876,

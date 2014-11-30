@@ -3,7 +3,7 @@
 var cleanConfig = {
     out: ["<%= buildOutput %>"],
     compiledOutput: '<%= buildOutput %>/<%= compiledOutput %>',
-    testResults: '<%= buildOutput %>/test-results'
+    testResults: '<%= buildOutput %>/test-results/unit'
 };
 
 module.exports = function (grunt) {
