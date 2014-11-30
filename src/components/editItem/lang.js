@@ -6,7 +6,7 @@ var lang = {
         "descriptionLabel": "Description",
         "weightLabel": "Weight",
         "fragileLabel": "Fragile",
-        "roomLabel": "Room where the item is based",
+        "roomLabel": "Room",
         "close": "Close",
         "delete": "Delete",
         "saveAndClose": "Save and Close",

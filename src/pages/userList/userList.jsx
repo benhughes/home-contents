@@ -11,7 +11,6 @@ module.exports = React.createClass({
             language = lang("en"),
             roomLists = roomData.getData();
 
-        console.log("app", roomLists)
         for (var room in roomLists) {
             console.log(roomLists[room]);
             rooms.push(<RoomList key={room} id={room} room={roomLists[room]}/>);

@@ -3,28 +3,30 @@
 var React = require('react'),
     lang = require('./lang'),
     ListItem = require('./../listItem/listItem.jsx'),
-    itemsData = require('../../data/item.data.js');
+    EditItem = require('../editItem/editItem.jsx'),
+    itemsData = require('../../data/item.data');
 
 module.exports = React.createClass({
     defaultItem: {
-        name: "edit me",
-        description: "Add a description",
+        name: "",
+        description: "",
         weight: 0,
         fragile: false
     },
     onAddItemClick: function (event) {
         event.preventDefault();
         var itemData = this.defaultItem;
-        console.log(this.id)
         itemData.room = this.props.id;
-        itemsData.getSelector().push(this.defaultItem, this.render.bind(this));
+        //add a new item and then open the editor to edit that item
+        var newRow = itemsData.getSelector().push(this.defaultItem, function () {
+            React.render(<EditItem item={itemData} id={newRow.name()} />, document.getElementById('popup'));
+        }.bind(this));
     },
     render: function() {
         var language = lang("en"),
             rows = [],
-            items = itemsData.filterByRoom(this.props.id);
+            items = itemsData.filterByRoom(this.props.id) || [];
 
-        console.log("rooms", items, this.props);
         for (var item in items) {
             rows.push(<ListItem key={item} id={item} item={items[item]}/>);
         }
@@ -33,7 +35,7 @@ module.exports = React.createClass({
                 <h2 id={this.props.id}>{this.props.room.name}</h2>
                 <ul>
                     {rows}
-                    <li className="addItem"><a href="#" onClick={this.onAddItemClick}>{language.addItem}</a></li>
+                    <li className="addItem"><a ref="addItemButton" href="#" onClick={this.onAddItemClick}>{language.addItem}</a></li>
                 </ul>
             </li>
         );

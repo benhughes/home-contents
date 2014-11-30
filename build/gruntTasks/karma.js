@@ -1,7 +1,5 @@
 "use strict";
 
-var istanbul = require('browserify-istanbul');
-
 var karmaConfig = {
     options: {
         basePath: '',

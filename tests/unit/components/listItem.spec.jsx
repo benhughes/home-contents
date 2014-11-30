@@ -1,6 +1,7 @@
 "use strict";
 
-var ListLang = require('../../../src/components/listItem/lang')("en");
+var proxyquire = require('proxyquireify')(require),
+    ListLang = require('../../../src/components/listItem/lang')("en");
 
 
 describe('listItem.jsx', function () {

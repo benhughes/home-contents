@@ -123,10 +123,13 @@ var EditItem = React.createClass({
                             </select>
                         </li>
                     </ul>
-                    <a href="#" onClick={this.onDelete}>{language.delete}</a>
-                    <a href="#" onClick={this.onClose}>{language.close}</a>
-                    <a href="#" onClick={this.onSaveAndClose}>{language.saveAndClose}</a>
-                    <a href="#" onClick={this.onSaveAndNew}>{language.saveAndNew}</a>
+                    <div className="buttonHolder">
+                        <a href="#" className="button delete" onClick={this.onDelete}>{language.delete}</a>
+                        <a href="#" className="button saveAndClose" onClick={this.onSaveAndClose}>{language.saveAndClose}</a>
+                        <a href="#" className="button saveAndNew" onClick={this.onSaveAndNew}>{language.saveAndNew}</a>
+                        <a href="#" className="button close" onClick={this.onClose}>{language.close}</a>
+                    </div>
+
                 </div>
             </div>
         )
