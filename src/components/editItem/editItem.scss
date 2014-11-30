@@ -12,11 +12,33 @@
     left: 15%;
     position: absolute;
     background-color: $white;
-    padding: 10%;
+    padding: 5%;
     box-sizing: border-box;
     border-radius: 2px;
     h1 {
       font-size: 2em;
+    }
+    li {
+      margin-bottom: 10px;
+    }
+    .textInput {
+      label {
+        padding-right: 5%;
+        box-sizing: border-box;
+        width: 20%;
+      }
+      input {
+        width: 75%;
+      }
+    }
+    .textareaInput {
+      label {
+        display: block;
+
+      }
+      textarea {
+        width: 100%;
+      }
     }
   }
 }

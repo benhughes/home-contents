@@ -1,3 +1,21 @@
 $white: HSL(45,0%,99%);
 $black: HSL(45,0%, 5%);
-$darkGrey: HSL(45,0%, 50%);
+$lightGrey: HSL(45,0%, 95%);
+$midGrey: HSL(45,0%, 50%);
+$darkGrey: HSL(45,0%, 25%);
+
+$hueValue1: 300;
+$hueValue2: 150;
+$hueValue3: 91;
+
+$darkColour: HSL($hueValue1, 100%, 25%);
+$midColour: HSL($hueValue1, 100%, 30%);
+$lightColour: HSL($hueValue1, 100%, 35%);
+
+$darkColour2: HSL($hueValue2, 100%, 25%);
+$midColour2: HSL($hueValue2, 100%, 30%);
+$lightColour2: HSL($hueValue2, 100%, 35%);
+
+$darkColour3: HSL($hueValue3, 100%, 25%);
+$midColour3: HSL($hueValue3, 100%, 30%);
+$lightColour3: HSL($hueValue3, 100%, 35%);

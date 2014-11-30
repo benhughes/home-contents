@@ -15,13 +15,17 @@ module.exports = React.createClass({
 
         return (
             <li className={["listItem", "listItem-" + this.props.id].join(' ')}>
-                <a className="edit" href="#" onClick={this.onEditClick}>{language.edit}</a>
-                <span className={["fragileIndicator", this.props.item.fragile ? "isFragile": "notFragile"].join(' ')}>
-                {language.fragile}
-                </span>
-                <span className={["weight", this.props.item.weight > 0 ? "weight-show" : ""]} >{this.props.item.weight}</span>
+
                 <h3>{this.props.item.name}</h3>
-                <span className="description">{this.props.item.description}</span>
+                <p className="description">{this.props.item.description} </p>
+                <div className="bottomInfo">
+                    <span className={["fragileIndicator", this.props.item.fragile ? "fragileShow": ""].join(' ')}>
+                        {language.fragile}
+                    </span>
+                    <span className={["weight", this.props.item.weight > 0 ? "weightShow" : ""].join(" ")} >{this.props.item.weight}kg</span>
+                    <a className="edit" href="#" onClick={this.onEditClick}>{language.edit}</a>
+                </div>
+
             </li>
         )
     }

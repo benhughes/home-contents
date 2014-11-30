@@ -97,26 +97,26 @@ var EditItem = React.createClass({
                 <div className="editDialogue">
                     <h1>{language.title}</h1>
                     <ul>
-                        <li>
+                        <li className="textInput">
                             <label htmlFor="name">{language.nameLabel}:</label>
-                            <input data-itemStateId="itemName" id="itemNameEdit" value={this.state.itemName} onSubmit={this.onSaveAndClose} onChange={this.handleNameChange} onKeyDown={this.handleKeyDown}/>
+                            <input data-itemStateId="itemName" id="itemNameEdit" placeholder={language.nameLabel} value={this.state.itemName} onSubmit={this.onSaveAndClose} onChange={this.handleNameChange} onKeyDown={this.handleKeyDown}/>
                         </li>
-                        <li>
+                        <li className="textareaInput">
                             <label htmlFor="itemDescriptionEdit">{language.descriptionLabel}:</label>
                             <textarea id="itemDescriptionEdit" value={this.state.itemDescription} onChange={this.handleDescriptionChange}></textarea>
                         </li>
-                        <li>
+                        <li className="textInput">
                             <label htmlFor="itemWeightEdit">{language.weightLabel}:</label>
-                            <input id="itemWeightEdit" value={this.state.itemWeight} onChange={this.handleWeightChange} onKeyDown={this.handleKeyDown}/>KG
+                            <input type="number" id="itemWeightEdit" value={this.state.itemWeight} onChange={this.handleWeightChange} onKeyDown={this.handleKeyDown}/>KG
                         </li>
-                        <li>
+                        <li className="optionInput">
                             <label htmlFor="itemFragileEdit">{language.fragileLabel}</label>
                             <select value={this.state.itemFragile === true ? "true" : "false"} onChange={this.handleFragileChange}>
                                 <option value="true">Is Fragile</option>
                                 <option value="false">Isn't Fragile</option>
                             </select>
                         </li>
-                        <li>
+                        <li className="optionInput">
                             <label htmlFor="itemRoomEdit">{language.roomLabel}</label>
                             <select value={this.state.itemRoom} onChange={this.handleRoomChange}>
                                 {roomsOptions}

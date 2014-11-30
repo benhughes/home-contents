@@ -1,7 +1,7 @@
 "use strict";
 
-var exampleView = require('./components/roomList.jsx'),
-    appPage = require('./pages/app.jsx'),
+var exampleView = require('./components/roomList/roomList.jsx'),
+    appPage = require('./pages/userList/userList.jsx'),
     React = require('react');
 
 var appData = require('./data/app.data.js');
