@@ -1,0 +1,29 @@
+.page.userList {
+  .messageHolder {
+    background-color: $white;
+    width: 100%;
+    max-width: 500px;
+    margin: 20% auto;
+    padding: 5%;
+    border: 2px solid $darkColour;
+    box-shadow: $layer1Shadow;
+    h1 {
+      color: $darkColour;
+    }
+    input {
+      font-size: 2em;
+    }
+    a {
+      color: $midColour;
+      font-size: 2em;
+      padding: 0 10px;
+      display: inline-block;
+    }
+    p {
+      strong {
+        font-weight: bold;
+        color: $midColour;
+      }
+    }
+  }
+}
