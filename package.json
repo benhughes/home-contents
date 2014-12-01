@@ -4,7 +4,8 @@
   "description": "home-contents =============",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm install && ./node_modules/grunt-cli/bin/grunt",
+    "start": "npm install && ./node_modules/grunt-cli/bin/grunt localDev"
   },
   "repository": {
     "type": "git",
@@ -35,7 +36,7 @@
     "karma-phantomjs-launcher": "~0.1.4",
     "karma-coverage": "~0.2.6",
     "browserify-istanbul": "~0.1.2",
-    "rewireify": "0.0.13"
+    "grunt-cli": "~0.1.13"
   },
   "dependencies": {
     "npm": "~2.1.9",
