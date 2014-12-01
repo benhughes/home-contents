@@ -11,7 +11,7 @@ To Start the app just git clone and run 'npm start'. This will go and get the de
 * Sets up a server
 * Sets up a watch script to run SASS and Browserify if the JS or Css Changes
 
-Once this script is run go http://localhost:8080 to see the app in action.
+Once this script is run go [http://localhost:8080](http://localhost:8080) to see the app in action (or [http://localhost:8080/?listid=bensmove](http://localhost:8080/?listid=bensmove) to see some pre-populated madness).
 
 To run the hint/unit tests. Just type 'grunt' or 'npm test'
 
