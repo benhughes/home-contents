@@ -7,11 +7,8 @@ var React = require('react'),
 
 var ENTER_KEY = 13;
 
-//React.unmountComponentAtNode(document.getElementById('container'));
 var EditItem = React.createClass({
     getInitialState: function() {
-        // naming it initialX clearly indicates that the only purpose
-        // of the passed down prop is to initialize something internally
         return {
             itemName: this.props.item.name,
             itemDescription: this.props.item.description,

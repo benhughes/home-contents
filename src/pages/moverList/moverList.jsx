@@ -16,11 +16,9 @@ module.exports = React.createClass({
         this.setState({"loading": false});
         roomData.initialize();
         itemsData.initialize();
-        console.log('here');
         this.forceUpdate();
     },
     render: function() {
-        console.log('move list')
         var heavyItemsByRoom,
             HeavyItemsRoomsLists = [],
             fragileItemsByRoom,

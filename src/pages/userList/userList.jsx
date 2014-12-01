@@ -15,6 +15,7 @@ module.exports = React.createClass({
         return {loading: true};
     },
     dataChanged:function () {
+        this.setState({loading: false});
         this.setState({"loading": false});
         if (!roomData.getSelector()) {
             roomData.initialize();
@@ -22,18 +23,19 @@ module.exports = React.createClass({
         if(!itemsData.getSelector()) {
             itemsData.initialize();
         }
-        console.log('here');
         this.forceUpdate();
     },
     onAddRoomClick: function (event) {
         event.preventDefault();
-        console.log('here');
         var itemData = {name: "Room"};
         //add a new item and then open the editor to edit that item
         var newRoom = roomData.getSelector().push(itemData, function () {
-            console.log('here inside')
             React.render(<EditRoom item={itemData} id={newRoom.name()} />, document.getElementById('popup'));
         }.bind(this));
+    },
+    onManifestClick: function (event) {
+        event.preventDefault();
+        location.search = location.search + "&page=moverList";
     },
 
     render: function() {
@@ -45,13 +47,15 @@ module.exports = React.createClass({
             rooms.push(<RoomList key={room} id={room} room={roomLists[room]} items={itemsData.filterByRoom(room)}/>);
         }
         return (
-            <div className="page userList">
+            <div className={["page","userList", this.state.loading ? "loading" : ""].join(" ")}>
                 <div className="list">
                     <h1>{language.pageTitle}</h1>
                     <ul>
                         {rooms}
                     </ul>
-                    <a href="#" onClick={this.onAddRoomClick}>{language.addRoom}</a>
+                    <a href="#" className="addRoomButton" onClick={this.onAddRoomClick}>{language.addRoom}</a>
+                    <a href="#" className="manifestLink" onClick={this.onManifestClick}>{language.manifest}</a>
+
                 </div>
             </div>
         );

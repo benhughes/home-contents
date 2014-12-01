@@ -8,7 +8,6 @@ var ENTER_KEY = 13;
 
 var EditItem = React.createClass({
     getInitialState: function() {
-        console.log('getInitialState');
         return {
             itemName: this.props.item.name
         };

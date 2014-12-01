@@ -2,7 +2,8 @@
 
 var lang = {
     "en": {
-        "addItem": "Add Item"
+        "addItem": "Add Item",
+        edit: "Edit"
     },
     "fr": {
 

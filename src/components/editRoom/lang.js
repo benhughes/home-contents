@@ -3,7 +3,11 @@
 var lang = {
     "en": {
         "nameLabel": "Name",
-        "title": "Edit/Add Room"
+        "title": "Edit/Add Room",
+        "close": "Close",
+        "delete": "Delete",
+        "saveAndClose": "Save and Close",
+        "saveAndNew": "Save and New",
     },
     "fr": {
 

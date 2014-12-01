@@ -4,7 +4,21 @@
   h2 {
     color: $darkGrey;
     margin-bottom: 0;
+    position: relative;
+    .edit {
+      background-color: $lightColour;
+      padding: 5px 15px;
+      font-size: 0.5em;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      line-height: 1.7em;
+      color: $white;
+      text-decoration: none;
+      display: none;
+    }
   }
+
   ul {
     padding-bottom: 40px;
     li.addItem {
@@ -25,6 +39,13 @@
         position: relative;
 
       }
+    }
+  }
+}
+.roomList.editable {
+  h2:hover {
+    .edit {
+      display: block;
     }
   }
 }

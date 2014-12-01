@@ -3,7 +3,8 @@
 var lang = {
     "en": {
         "pageTitle": "Moving List",
-        "addRoom": "Add A Room"
+        "addRoom": "Add A Room",
+        "manifest": "Manifest"
     },
     "fr": {
 

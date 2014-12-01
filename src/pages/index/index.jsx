@@ -1,16 +1,11 @@
 "use strict";
 
 var React = require('react'),
-    lang = require('./lang'),
-    RoomList = require('./../../components/roomList/roomList.jsx'),
-    roomData = require('./../../data/rooms.data.js'),
-    itemsData = require('../../data/item.data');
+    lang = require('./lang');
 
 
 module.exports = React.createClass({
     getInitialState: function() {
-        // naming it initialX clearly indicates that the only purpose
-        // of the passed down prop is to initialize something internally
         return {
             listId: ""
         };
@@ -19,7 +14,6 @@ module.exports = React.createClass({
         this.setState({listId: event.target.value});
     },
     onSubmit:function () {
-        console.log('here', "/?listid=" + this.state.listId)
         location.href = "/?listid=" + this.state.listId;
     },
 
